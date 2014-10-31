@@ -1,0 +1,9 @@
+Enhances the Battery Usage of settings.
+Bundle loader code based off of DetailedBatteryUsage by Hamza Sood
+
+Features:
+- Enable a sharedInstance on BatteryUIController (for use with cycript and the like)
+- Enable internal radar/error reporting, although it crashes (see Tweak.xm#L42)
+- Injects a specifier to show the internal graph view controller
+- Shows Usage times (the ones DetailedBatteryUsage doesn't)
+- Shows the internal graphs and stuff

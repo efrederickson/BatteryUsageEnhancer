@@ -15,15 +15,15 @@ id _shared_BatteryUIController;
 -(id) init { return _shared_BatteryUIController = %orig; }
 -(int)batteryUIType { return 2; } 
 	/* 0 = Stock, 
-	   1 = without daemons (unless showDaemonsInInternal is YES) or demo options and with suggessions, 
-	   2 = All 
+	   1 = without daemons (unless showDaemonsInInternal is YES) or demo options; shows suggessions, 
+	   2 = All; no suggestions
 		Thanks Hamza Sood for this research. 
 	*/
 -(BOOL) showDaemonsInInternal { return YES; }
 -(BOOL) shouldShowTime { return YES; }
 %new +(id) sharedInstance { return _shared_BatteryUIController; } /* Used for cycript. Pretty useful. */
 
-- (_Bool)inDemoMode { return YES; }
+//- (_Bool)inDemoMode { return YES; }
 
 -(NSMutableArray*) specifiers
 {
@@ -45,12 +45,13 @@ id _shared_BatteryUIController;
 %end
 
 void BatteryUsageUIBundleLoadedNotificationFired(CFNotificationCenterRef center, void *observer, CFStringRef name, const void *object, CFDictionaryRef userInfo) {
-    if (objc_getClass("BatteryUIController") == Nil)
+    if (objc_getClass("BatteryUIController") == nil)
         return;
     %init(BatteryUsageUI);
 }
 
-__attribute__((constructor)) static void BatteryUIControllerHooksInit() {
+%ctor
+{
     @autoreleasepool {
         CFNotificationCenterAddObserver(CFNotificationCenterGetLocalCenter(),
                                         bundleLoadedObserver,
