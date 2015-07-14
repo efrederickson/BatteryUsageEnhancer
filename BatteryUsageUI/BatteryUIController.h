@@ -4,9 +4,9 @@
  *     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2012 by Steve Nygard.
  */
 
-#import "PSListController.h"
-
-#import "UIAlertViewDelegate.h"
+//#import <Preferences/PSListController.h>
+@interface PSListController : UIViewController
+@end
 
 @class BatteryUsageRadarComposeViewController, NSArray, NSMutableArray, NSMutableDictionary, NSString, NSTimer, PSSpecifier, UIActivityIndicatorView;
 
@@ -40,7 +40,6 @@
     BatteryUsageRadarComposeViewController *_radarController;
 }
 
-- (void).cxx_destruct;
 @property(nonatomic) int BUI_MODE;
 - (id)_batteryGroupSpecifier;
 - (id)_spinnerSpecifierGroup;
@@ -77,12 +76,6 @@
 - (void)viewDidLoad;
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)viewWillDisappear:(_Bool)arg1;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned long long hash;
-@property(readonly) Class superclass;
 
 @end
 

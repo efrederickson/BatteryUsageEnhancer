@@ -1,4 +1,4 @@
 BatteryUsageUI.bundle/
 .theos/
 .DS_Store
-
+*.deb

@@ -42,10 +42,17 @@ id _shared_BatteryUIController;
 + (_Bool)hasRadarCompose { return %orig; } // Crash: -[UIViewController composeControllerWithCompletionHander:] doesn't exist
 %end
 
+%hook BatterUIGraphsViewController
+-(id) initWithNibName:(NSString*)name bundle:(NSBundle*)bundle{
+	NSLog(@"BUNDLE: %@", name);
+	return %orig;
+}
+%end
+
 %end
 
 void BatteryUsageUIBundleLoadedNotificationFired(CFNotificationCenterRef center, void *observer, CFStringRef name, const void *object, CFDictionaryRef userInfo) {
-    if (objc_getClass("BatteryUIController") == nil)
+    if (%c(BatteryUIController) == nil)
         return;
     %init(BatteryUsageUI);
 }

@@ -3,7 +3,8 @@ Name: BatteryUsageEnhancer
 Depends: mobilesubstrate
 Version: 0.0.1
 Architecture: iphoneos-arm
-Description: An awesome MobileSubstrate tweak!
+Description: Improve Battery Usage section on iOS 8
+Depiction: http://elijahandandrew.com/repo/depictions/BatteryUsageEnhancer/
 Maintainer: Elijah Frederickson
 Author: Elijah Frederickson
 Section: Tweaks

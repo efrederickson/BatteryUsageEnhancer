@@ -4,9 +4,9 @@
  *     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2012 by Steve Nygard.
  */
 
-#import "UIViewController.h"
+#import <UIKit/UIViewController.h>
 
-@class BatteryUsageRadarComposeViewController, NSDictionary, UIActivityIndicatorView, UIScrollView;
+@class BatteryUsageRadarComposeViewController;
 
 @interface BatteryUIGraphsViewController : UIViewController
 {
@@ -16,13 +16,12 @@
     BatteryUsageRadarComposeViewController *_radarController;
 }
 
-- (void).cxx_destruct;
-@property(retain, nonatomic) UIActivityIndicatorView *activityIndicator; // @synthesize activityIndicator=_activityIndicator;
+@property(retain, nonatomic) UIActivityIndicatorView *activityIndicator;
 - (void)didReceiveMemoryWarning;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
-@property(retain, nonatomic) BatteryUsageRadarComposeViewController *radarController; // @synthesize radarController=_radarController;
+@property(retain, nonatomic) BatteryUsageRadarComposeViewController *radarController;
 - (void)reportIssue;
-@property(retain, nonatomic) UIScrollView *rootScrollView; // @synthesize rootScrollView=_rootScrollView;
+@property(retain, nonatomic) UIScrollView *rootScrollView;
 - (void)setUpModelingView:(id)arg1;
 - (_Bool)validateDictionary:(id)arg1;
 - (void)viewDidLoad;
