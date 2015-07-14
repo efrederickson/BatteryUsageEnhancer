@@ -26,14 +26,9 @@ UIViewController *ncVC;
 + (NSString *)_localizableTitleForBulletinViewControllerOfClass:(Class)aClass
 {
 	NSString *o = %orig;
-	if (!o || o.length == 0)
+	if (!o || o.length == 0 || aClass == nil || aClass == idClass)
 		return @"Battery";
 	return o;
-
-	if (strcmp(class_getName(aClass), "BatteryUIController") == 0)
-		return @"Battery";
-	else 
-		return %orig;
 }
 %end
 
@@ -112,8 +107,6 @@ void BatteryUsageUIBundleLoadedNotificationFired2(CFNotificationCenterRef center
 {
 	if (%c(SpringBoard) == nil)
 		return;
-
-	dlopen("/Library/MobileSubstrate/DynamicLibraries/BatteryUsageEnhancer.dylib", RTLD_NOW);
 
     CFNotificationCenterAddObserver(CFNotificationCenterGetLocalCenter(),
                                     NULL,
