@@ -5,6 +5,6 @@ Version: 0.0.1
 Architecture: iphoneos-arm
 Description: Improve Battery Usage section on iOS 8
 Depiction: http://elijahandandrew.com/repo/depictions/BatteryUsageEnhancer/
-Maintainer: Elijah Frederickson
-Author: Elijah Frederickson
+Maintainer: Elijah Frederickson <elijah.frederickson@gmail.com>
+Author: Elijah Frederickson <elijah.frederickson@gmail.com>
 Section: Tweaks
